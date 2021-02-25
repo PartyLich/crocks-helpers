@@ -1,20 +1,16 @@
 // @flow
 import test from 'tape';
 
-import ensure from './ensure';
+import * as index from '.';
 
-// result
-import unwrapOr from './result/unwrapOr';
-
-import index from '.';
+import unwrapOr from './unwrapOr';
 
 
 const expected = {
-  ensure,
   unwrapOr,
 };
 
-test('crocks-helpers entry', (t) => {
+test('result entry', (t) => {
   Object.entries(expected).forEach(([key, value]) =>
     t.equal(index[key], value, `provides the ${ key } function`));
 
