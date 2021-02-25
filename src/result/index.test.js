@@ -3,11 +3,13 @@ import test from 'tape';
 
 import * as index from '.';
 
+import unwrap from './unwrap';
 import unwrapOr from './unwrapOr';
 import unwrapOrElse from './unwrapOrElse';
 
 
 const expected = {
+  unwrap,
   unwrapOr,
   unwrapOrElse,
 };
