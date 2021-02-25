@@ -4,10 +4,12 @@ import test from 'tape';
 import * as index from '.';
 
 import unwrapOr from './unwrapOr';
+import unwrapOrElse from './unwrapOrElse';
 
 
 const expected = {
   unwrapOr,
+  unwrapOrElse,
 };
 
 test('result entry', (t) => {
