@@ -6,12 +6,14 @@ import * as index from '.';
 import unwrap from './unwrap';
 import unwrapOr from './unwrapOr';
 import unwrapOrElse from './unwrapOrElse';
+import wrappedErr from './wrappedErr';
 
 
 const expected = {
   unwrap,
   unwrapOr,
   unwrapOrElse,
+  wrappedErr,
 };
 
 test('result entry', (t) => {

@@ -7,6 +7,7 @@ import ensure from './ensure';
 import unwrap from './result/unwrap';
 import unwrapOr from './result/unwrapOr';
 import unwrapOrElse from './result/unwrapOrElse';
+import wrappedErr from './result/wrappedErr';
 
 import index from '.';
 
@@ -16,6 +17,7 @@ const expected = {
   unwrap,
   unwrapOr,
   unwrapOrElse,
+  wrappedErr,
 };
 
 test('crocks-helpers entry', (t) => {
