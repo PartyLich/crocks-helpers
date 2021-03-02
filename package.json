@@ -1,0 +1,77 @@
+{
+  "name": "@partylich/crocks-helpers",
+  "version": "0.1.0",
+  "description": "Utility functions for use with the Crocks ADT library",
+  "author": "PartyLich",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "engines": {
+    "node": ">=15"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/PartyLich/crocks-helpers.git"
+  },
+  "keywords": [
+    "crocks",
+    "ADT",
+    "FP",
+    "Functional"
+  ],
+  "scripts": {
+    "dev": "babel src --watch -d lib",
+    "build": "rimraf lib && babel src -d lib --ignore '**/*.test.js'",
+    "build:flow": "flow-copy-source -v -i '**/*.test.js' src lib",
+    "cov": "nyc babel-tape-runner src/**/*.test.js test/**/*.test.js",
+    "cov:flow": "flow batch-coverage src",
+    "flow": "flow",
+    "prebuild": "npm run verify",
+    "prepare": "npm run build && npm run build:flow",
+    "lint": "eslint ./src && echo Lint Complete",
+    "lint:fix": "eslint ./src --fix && echo Lint Fix Complete",
+    "test": "NODE_ENV=dev babel-tape-runner src/**/*.test.js src/*.test.js | tap-summary",
+    "verify": "npm run -s test && flow && npm run -s lint",
+    "watch:flow": "watch -t 'npx flow'",
+    "watch:lint": "watch 'npm run lint'",
+    "watch:source": "watch 'clear && npm run verify' src test",
+    "watch": "npm run watch:source"
+  },
+  "exports": {
+    ".": "./lib/index.js",
+    "./ensure": "./lib/ensure.js",
+    "./result": "./lib/result/index.js",
+    "./result/*": "./lib/result/*.js",
+    "./feature": "./lib/feature/index.js",
+    "./feature/*": "./lib/feature/*.js",
+    "./*": "./lib/*.js"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run verify",
+      "pre-push": "npm test"
+    }
+  },
+  "dependencies": {
+    "core-js": "^3.9.0",
+    "crocks": "~0.12.4"
+  },
+  "devDependencies": {
+    "@babel/cli": "~7.12.17",
+    "@babel/core": "~7.12.17",
+    "@babel/eslint-parser": "~7.12.17",
+    "@babel/preset-env": "~7.12.17",
+    "@babel/preset-flow": "~7.12.13",
+    "babel-tape-runner": "~3.0.0",
+    "eslint": "~7.20.0",
+    "eslint-config-partylich": "~0.4.0",
+    "eslint-plugin-flowtype": "~4.5.3",
+    "flow-bin": "~0.145.0",
+    "flow-copy-source": "^2.0.9",
+    "husky": "~4.3.8",
+    "nyc": "~15.1.0",
+    "rimraf": "~3.0.2",
+    "tap-summary": "~4.0.0",
+    "tape": "~5.2.0",
+    "watch": "~1.0.2"
+  }
+}
