@@ -22,6 +22,7 @@
     "sourceType": "module"
   },
   "rules": {
-    "flowtype/semi": ["error", "always"]
+    "flowtype/semi": ["error", "always"],
+    "flowtype/require-valid-file-annotation": ["error", "always"]
   }
 }

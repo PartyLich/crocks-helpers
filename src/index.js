@@ -1,6 +1,8 @@
+// @flow
 import * as result from './result';
 
-export default Object.assign(
-    {},
-    result,
-);
+export * from './result';
+
+export default {
+  ...result,
+};
