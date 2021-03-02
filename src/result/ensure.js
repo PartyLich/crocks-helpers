@@ -4,7 +4,7 @@ import { Ok, Err } from 'crocks/Result';
 import ifElse from 'crocks/logic/ifElse';
 import isFunction from 'crocks/predicates/isFunction';
 
-import type { PredicateFn, ResultType } from './types';
+import type { PredicateFn, ResultType } from '../types';
 
 
 // returns a function that evaluates predicate `pred` on the supplied value and

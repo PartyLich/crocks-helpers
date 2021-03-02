@@ -1,9 +1,9 @@
 // @flow
 import test from 'tape';
 
-import ensure from './ensure';
 
 // result
+import ensure from './result/ensure';
 import unwrap from './result/unwrap';
 import unwrapOr from './result/unwrapOr';
 import unwrapOrElse from './result/unwrapOrElse';

@@ -38,7 +38,6 @@
   },
   "exports": {
     ".": "./lib/index.js",
-    "./ensure": "./lib/ensure.js",
     "./result": "./lib/result/index.js",
     "./result/*": "./lib/result/*.js",
     "./feature": "./lib/feature/index.js",

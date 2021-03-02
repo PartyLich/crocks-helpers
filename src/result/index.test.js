@@ -3,6 +3,7 @@ import test from 'tape';
 
 import * as index from '.';
 
+import ensure from './ensure';
 import unwrap from './unwrap';
 import unwrapOr from './unwrapOr';
 import unwrapOrElse from './unwrapOrElse';
@@ -10,6 +11,7 @@ import wrappedErr from './wrappedErr';
 
 
 const expected = {
+  ensure,
   unwrap,
   unwrapOr,
   unwrapOrElse,
